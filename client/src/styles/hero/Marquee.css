@@ -1,0 +1,35 @@
+.marquee-container {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex; /* Use flex to align children horizontally */
+}
+
+.marquee-wrapper {
+    height: 100%; /* Full height of the container */
+    width: 50%; /* Half of the container width for each marquee */
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 20px 0; /* Increase vertical spacing between cards */
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 150px; /* Fixed width for a square card */
+    height: 150px; /* Fixed height to ensure square shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem; /* Adjust font size as needed */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}

@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="nav bg-[#EDEDED] h-[5.25rem] fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-30"
+      className="nav bg-[#F2F2F2] h-[5.25rem] sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-30"
 
     >
       {/* Logo Section */}
@@ -35,13 +35,13 @@ const Navbar = () => {
           href="/pricing"
           className="text-[#111111] font-gothicbold max-sm:hidden"
         >
-          Pricing
+          Career
         </a>
         <a
           href="/login"
           className="text-[#111111] font-gothicbold max-sm:hidden"
         >
-          Log in
+          Contact
         </a>
         <button
           type="button"
