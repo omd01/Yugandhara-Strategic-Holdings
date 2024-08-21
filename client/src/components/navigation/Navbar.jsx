@@ -24,13 +24,13 @@ const Navbar = () => {
 
     >
       {/* Logo Section */}
-      <div className="flex items-center">
+      <div className="flex items-center max-md:w-36">
         {/* Replace with your actual logo */}
         <img src={logo} alt="Logo" />
       </div>
 
       {/* Right Section */}
-      <div className="flex items-center space-x-10 pr-3 text-md">
+      <div className="flex items-center space-x-10 pr-3 text-lg">
         <a
           href="/pricing"
           className="text-[#111111] font-gothicbold max-sm:hidden"

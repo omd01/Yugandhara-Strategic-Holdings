@@ -48,8 +48,8 @@ const MarqueeResponsive = ({ cards }) => {
   }, [cards]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen overflow-x-hidden ">
-      <div className="relative min-h-screen h-[calc(130px*2+2px)] space-y-10">
+    <div className="flex items-center justify-center min-y-screen overflow-x-hidden overflow-y-hidden">
+      <div className="relative min-w-full h-[calc(130px*2+2px)] space-y-16 mb-12">
         {/* Marquee Scrolling Left */}
         <div
           className="absolute top-0 left-0 flex flex-row"
@@ -79,7 +79,7 @@ const MarqueeResponsive = ({ cards }) => {
 
         {/* Marquee Scrolling Right */}
         <div
-          className="absolute top-[130px] left-0 flex flex-row"
+          className="absolute top-[100px] left-0 flex flex-row"
           style={{ height: '130px', width: '100%' }}
           ref={carouselRefRight}
         >

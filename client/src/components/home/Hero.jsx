@@ -2,17 +2,36 @@ import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Marquee from './marquee/Marquee';
 import MarqueeResponsive from './marquee/MarqueeResponsive';
-import logo1 from '../../assets/SM Consultancy.svg';
-import logo2 from '../../assets/Useless.svg';
-import logo3 from '../../assets/YUGA Weddings.svg';
-import logo4 from '../../assets/Mask Production.svg';
-import logo5 from '../../assets/The Magic Pan.svg';
-import logo6 from '../../assets/YUGA Hospitality.svg';
+const logo1 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004172/Yuga/Company%20Logos/Nikaay_u71ujk.svg';
+const logo2 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Mask_Production_gwcgqx.svg';
+const logo3 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Envifuture_ks0rmj.svg';
+const logo4 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004169/Yuga/Company%20Logos/Yugandhara_Foundation_nesbu5.svg';
+const logo5 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004169/Yuga/Company%20Logos/Yugandhara_Strategic_Holdings_1_zqhp6r.svg';
+const logo6 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004168/Yuga/Company%20Logos/YUGA_Weddings_p9pdhr.svg';
+const logo7 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004166/Yuga/Company%20Logos/Yuga_Studios_bixo6l.svg';
+const logo8 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004165/Yuga/Company%20Logos/YUGA_Sports_Entertainment_gyc9ki.svg';
+const logo9 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004165/Yuga/Company%20Logos/Yuga_Production_House_w3hxln.svg';
+const logo10 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004163/Yuga/Company%20Logos/YUGA_Hospitality_vwphur.svg';
+const logo11 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004162/Yuga/Company%20Logos/Useless_vn8okj.svg';
+const logo12 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004161/Yuga/Company%20Logos/TMS_Global_Kitchen_fqa8ss.svg';
+const logo13 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004161/Yuga/Company%20Logos/Urban_Farmer_yyirob.svg';
+const logo14 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004160/Yuga/Company%20Logos/SM_Consultancy_qbfrt4.svg';
+const logo15 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yuga/Company%20Logos/Rooh_Photography_zz5hij.svg';
+const logo16 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yuga/Company%20Logos/SIGA_bf7iav.svg';
 
-import mlogo1 from '../../assets/Yuga Production House.svg';
-import mlogo2 from '../../assets/YUGA Sports & Entertainment.svg';
-import mlogo3 from '../../assets/Yuga Studios.svg';
-import mlogo4 from '../../assets/Yugandhara Strategic Holdings.svg';
+
+const mlogo1 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261488/Yuga/Company%20Icons/Yugandhara_Foundation_ii0dvx.svg';
+const mlogo2 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261482/Yuga/Company%20Icons/Rooh_Photography_zgierc.svg';
+const mlogo3 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261482/Yuga/Company%20Icons/Nikaay_ss18jx.svg';
+const mlogo4 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261481/Yuga/Company%20Icons/Envifuture_hkrhjb.svg';
+const mlogo5 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261482/Yuga/Company%20Icons/Mask_Production_ebdkyb.svg';
+const mlogo6 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261481/Yuga/Company%20Icons/YUGA_Hospitality_kxvyrq.svg';
+const mlogo7 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261479/Yuga/Company%20Icons/Useless_rzzyu0.svg';
+const mlogo8 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261480/Yuga/Company%20Icons/TMS_Global_Kitchen_qgmzbh.svg';
+const mlogo9 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261479/Yuga/Company%20Icons/Urban_Farmer_whvxx8.svg';
+const mlogo10 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261479/Yuga/Company%20Icons/SM_Consultancy_bdyypz.svg';
+const mlogo11 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261479/Yuga/Company%20Icons/Yuga_tyofuz.svg';
+
 
 const Hero = () => {
   const cards = [
@@ -22,10 +41,22 @@ const Hero = () => {
     { logo: logo4 },
     { logo: logo5 },
     { logo: logo6 },
+    { logo: logo7 },
+    { logo: logo8 },
   ];
+  const cards2 = [
+    { logo: logo9 },
+    { logo: logo10 },
+    { logo: logo11 },
+    { logo: logo12 },
+    { logo: logo13 },
+    { logo: logo14 },
+    { logo: logo15 },
+    { logo: logo16 },
+  ]
   const [currentImage1, setCurrentImage1] = useState(mlogo1);
   const containerRef = useRef(null);
-  const images = [mlogo1, mlogo2, mlogo3, mlogo4];
+  const images = [mlogo1, mlogo2, mlogo3, mlogo4, mlogo5, mlogo6, mlogo7, mlogo8, mlogo9, mlogo10, mlogo11];
   const imageCount = images.length;
 
   useEffect(() => {
@@ -33,7 +64,7 @@ const Hero = () => {
     const imageElements = container.querySelectorAll('.image');
 
     // Initial setup
-    gsap.set(imageElements, { opacity: 0, scale: 0.9 });
+    gsap.set(imageElements, { opacity: 0, scale: 1.2 });
 
     // Create a GSAP timeline
     const tl = gsap.timeline({ repeat: -1 });
@@ -48,7 +79,7 @@ const Hero = () => {
         ease: 'power3.out',
       })
       .to(imageElement, {
-        duration: 1,
+        duration: 0.6,
         opacity: 0,
         scale: 0.9,
         ease: 'power3.in',
@@ -59,9 +90,9 @@ const Hero = () => {
 
 
   return (
-    <section className="hero-section flex flex-row max-xmlg:flex-col h-full">
+    <section className="hero-section flex flex-row max-xmlg:flex-col h-auto">
       {/* 70% Part */}
-      <div className="w-[70%] flex flex-col items-center mt-16 text-center max-xmlg:w-full" ref={containerRef}>
+      <div className="w-[75%] flex flex-col items-center mt-16 text-center max-xmlg:w-full" ref={containerRef}>
       {images.map((image, index) => (
           <div
             key={index}
@@ -71,32 +102,48 @@ const Hero = () => {
             <img
               src={image}
               alt={`Image ${index + 1}`}
-              className="image w-44 h-auto object-cover"
+              className="image w-24 h-auto object-cover"
               style={{ zIndex: 1 }}
             />
           </div>
         ))}
-        <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-36">Yugandhara Strategic Holdings</h1>
+        <div className='w-[70%] max-md:w-[100%]'>
+        <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-32">Yugandhara Strategic Holdings</h1>
+        </div>
         <div className='pt-4 w-[60%] max-xmlg:w-full'>
           <p className='font-gothicbook text-xl max-md:text-lg'>Featuring over 300,000 screens and 1,000 iOS, Android & Web apps - New content weekly.</p>
         </div>
-        <div className='flex flex-row justify-center items-center gap-10 pt-4'>
+        <div className='flex flex-row justify-center items-center gap-20 pt-4'>
         <a href="">
-          <button className='flex py-3 px-3 bg-[#111111] text-whiteo rounded-3xl'>Join for free</button>
+          <button className='flex py-3 px-3 bg-[#111111] text-whiteo font-gothicdemi rounded-3xl'>Join for free</button>
         </a>
         <a href="">
-          <button className='flex flex-row py-3 px-2 bg-[#FFFFFF] rounded-3xl'>See our plans 
+          <button className='flex flex-row py-3 px-2 bg-[#FFFFFF] font-gothicdemi rounded-3xl border'>See our plans 
+      <svg
+  className="ml-2 w-4 h-4 mt-1 text-gray-600"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+>
+  <path d="M5 12h14" /> {/* Horizontal line */}
+  <path d="M12 5l7 7-7 7" /> {/* Arrowhead */}
+</svg>
+
           </button>
         </a>
         </div>
       </div>
 
       {/* 30% Part */}
-      <div className="w-[30%] overflow-y-hidden overflow-x-hidden max-xmlg:hidden">
-        <Marquee cards={cards} />
+      <div className="w-[25%] overflow-y-hidden overflow-x-hidden max-xmlg:hidden">
+        <Marquee cards={cards} cards2={cards2} />
       </div>
       <div className='pt-16 xmlg:hidden'>
-        <MarqueeResponsive cards={cards} />
+        <MarqueeResponsive cards={cards} cards2={cards2} />
       </div>
     </section>
   );

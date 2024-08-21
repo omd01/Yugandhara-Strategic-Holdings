@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import '../../../styles/hero/Marquee.css'; // Ensure this path is correct
 
-const Marquee = ({ cards }) => {
+const Marquee = ({ cards, cards2 }) => {
   const carouselRefLeft = useRef(null);
   const carouselRefRight = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const carouselLeft = carouselRefLeft.current;
@@ -13,13 +14,8 @@ const Marquee = ({ cards }) => {
     const gap = 16; // Space between cards
     const totalHeight = (cardSize + gap) * cards.length; // Total height of the carousel
 
-    // Function to reset position
-    const resetPosition = (element) => {
-      gsap.set(element, { y: 0 });
-    };
-
-    // Create an infinite loop for the left column (moving up)
-    gsap.fromTo(
+    // Create infinite loop for the left column (moving up)
+    const tlLeft = gsap.fromTo(
       carouselLeft.children,
       { y: 0 },
       {
@@ -28,12 +24,12 @@ const Marquee = ({ cards }) => {
         duration: 10,
         repeat: -1,
         stagger: 0, // Ensures all children move together
-        onRepeat: () => resetPosition(carouselLeft.children),
+        paused: true, // Initialize as paused
       }
     );
 
-    // Create an infinite loop for the right column (moving down)
-    gsap.fromTo(
+    // Create infinite loop for the right column (moving down)
+    const tlRight = gsap.fromTo(
       carouselRight.children,
       { y: `-${totalHeight}px` },
       {
@@ -42,14 +38,50 @@ const Marquee = ({ cards }) => {
         duration: 10,
         repeat: -1,
         stagger: 0, // Ensures all children move together
-        onRepeat: () => resetPosition(carouselRight.children),
+        paused: true, // Initialize as paused
       }
     );
+
+    // Start animations
+    if (!isPaused) {
+      tlLeft.play();
+      tlRight.play();
+    }
+
+    // Cleanup on component unmount
+    return () => {
+      tlLeft.kill();
+      tlRight.kill();
+    };
   }, [cards]);
 
+  useEffect(() => {
+    const carouselLeft = carouselRefLeft.current;
+    const carouselRight = carouselRefRight.current;
+    
+    const tlLeft = gsap.getTweensOf(carouselLeft.children)[0];
+    const tlRight = gsap.getTweensOf(carouselRight.children)[0];
+
+    if (isPaused) {
+      tlLeft.pause();
+      tlRight.pause();
+    } else {
+      tlLeft.play();
+      tlRight.play();
+    }
+  }, [isPaused]);
+
+  const handleMouseDown = () => setIsPaused(true);
+  const handleMouseUp = () => setIsPaused(false);
+
   return (
-    <div className="flex items-center justify-center min-h-screen lg:mr-44">
-      <div className="relative min-h-screen w-[calc(130px*2+2px)] lg:space-x-16">
+    <div
+      className="relative flex items-center justify-center lg:mr-44"
+      style={{ height: '88vh' }}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+    >
+      <div className="relative min-h-screen w-[calc(130px*2+2px)] xxlg:space-x-10 lg:space-x-5">
         {/* Marquee Scrolling Up */}
         <div
           className="absolute top-0 left-0 flex flex-col"
@@ -83,7 +115,7 @@ const Marquee = ({ cards }) => {
           style={{ width: '130px', height: '100%' }}
           ref={carouselRefRight}
         >
-          {cards.map((card, index) => (
+          {cards2.map((card, index) => (
             <div
               key={index}
               className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
@@ -93,9 +125,9 @@ const Marquee = ({ cards }) => {
             </div>
           ))}
           {/* Duplicate cards to ensure seamless scrolling */}
-          {cards.map((card, index) => (
+          {cards2.map((card, index) => (
             <div
-              key={index + cards.length}
+              key={index + cards2.length}
               className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
