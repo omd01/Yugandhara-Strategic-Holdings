@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'ALL-ROUND-GOTHIC-BOLD';
+    src: url('/fonts/ALL-ROUND-GOTHIC-BOLD.OTF') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-BOLD-OBLIQUE';
+    src: url('/fonts/ALL-ROUND-GOTHIC-BOLD-OBLIQUE.OTF') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-BOOK';
+    src: url('/fonts/ALL-ROUND-GOTHIC-BOOK.OTF') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-BOOK-OBLIQUE';
+    src: url('/fonts/ALL-ROUND-GOTHIC-BOOK-OBLIQUE.OTF') format('truetype');
+    font-weight: normal;
+    font-style: oblique;
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-DEMI';
+    src: url('/fonts/ALL-ROUND-GOTHIC-DEMI.OTF') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-DEMI-OBLIQUE';
+    src: url('/fonts/ALL-ROUND-GOTHIC-DEMI-OBLIQUE.OTF') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-MEDIUM';
+    src: url('/fonts/ALL-ROUND-GOTHIC-MEDIUM.OTF') format('truetype');
+
+  }
+  
+  @font-face {
+    font-family: 'ALL-ROUND-GOTHIC-MEDIUM-OBLIQUE';
+    src: url('/fonts/ALL-ROUND-GOTHIC-MEDIUM-OBLIQUE.OTF') format('truetype');
+
+  }
