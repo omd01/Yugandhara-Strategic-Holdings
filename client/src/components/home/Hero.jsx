@@ -121,14 +121,14 @@ const Hero = () => {
         <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-32 max-sm:pt-28 tracking-[-0.04rem]">Yugandhara Strategic Holdings</h1>
         </div>
         <div className='pt-4 w-[60%] max-xmlg:w-full max-sm:px-3'>
-          <p className='font-gothicbook text-xl max-md:text-lg'>Featuring over 300,000 screens and 1,000 iOS, Android & Web apps - New content weekly.</p>
+          <p className='font-gothicbook text-xl max-md:text-lg'>Leading the way in event management, sustainable agriculture, luxury products, and digital solutions, delivering excellence across global industries.</p>
         </div>
         <div className='flex flex-row justify-center items-center gap-6 pt-4 max-sm:gap-2'>
         <a href="">
-          <button className='flex py-3 px-3 bg-[#111111] text-whiteo font-gothicdemi rounded-3xl max-sm:px-3 max-sm:text-sm'>Join for free</button>
+          <button className='flex py-3 px-3 bg-[#111111] text-whiteo font-gothicdemi rounded-3xl max-sm:px-3 max-sm:text-sm'>About Us</button>
         </a>
         <a href="">
-          <button className='flex flex-row py-3 px-2 bg-[#FFFFFF] font-gothicdemi rounded-3xl border max-sm:px-2 max-sm:text-sm'>See our plans 
+          <button className='flex flex-row py-3 px-2 bg-[#FFFFFF] font-gothicdemi rounded-3xl border max-sm:px-2 max-sm:text-sm'>Products
       <svg
   className="ml-2 w-4 h-4 mt-1 max-sm:mt-0.5 text-gray-600"
   xmlns="http://www.w3.org/2000/svg"
