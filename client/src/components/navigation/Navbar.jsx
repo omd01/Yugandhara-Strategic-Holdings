@@ -26,19 +26,21 @@ const Navbar = () => {
       {/* Logo Section */}
       <div className="flex items-center max-md:w-36">
         {/* Replace with your actual logo */}
+        <a href="/">
         <img src={logo} alt="Logo" />
+        </a>
       </div>
 
       {/* Right Section */}
       <div className="flex items-center space-x-10 pr-3 text-lg">
         <a
-          href="/pricing"
+          href=""
           className="text-[#111111] font-gothicbold max-sm:hidden"
         >
           Career
         </a>
         <a
-          href="/login"
+          href=""
           className="text-[#111111] font-gothicbold max-sm:hidden"
         >
           Contact
