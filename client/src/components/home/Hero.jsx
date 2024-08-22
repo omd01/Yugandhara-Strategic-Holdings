@@ -6,7 +6,7 @@ const logo1 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004172/Yug
 const logo2 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Mask_Production_gwcgqx.svg';
 const logo3 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Envifuture_ks0rmj.svg';
 const logo4 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004169/Yuga/Company%20Logos/Yugandhara_Foundation_nesbu5.svg';
-const logo5 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004169/Yuga/Company%20Logos/Yugandhara_Strategic_Holdings_1_zqhp6r.svg';
+const logo5 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724337335/Yuga/Company%20Logos/Yugandhara_Strategic_Holdings_ao84bo.svg';
 const logo6 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004168/Yuga/Company%20Logos/YUGA_Weddings_p9pdhr.svg';
 const logo7 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004166/Yuga/Company%20Logos/Yuga_Studios_bixo6l.svg';
 const logo8 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004165/Yuga/Company%20Logos/YUGA_Sports_Entertainment_gyc9ki.svg';
@@ -20,10 +20,10 @@ const logo15 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yu
 const logo16 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yuga/Company%20Logos/SIGA_bf7iav.svg';
 
 
-const mlogo1 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261488/Yuga/Company%20Icons/Yugandhara_Foundation_ii0dvx.svg';
-const mlogo2 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261482/Yuga/Company%20Icons/Rooh_Photography_zgierc.svg';
-const mlogo3 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261482/Yuga/Company%20Icons/Nikaay_ss18jx.svg';
-const mlogo4 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261481/Yuga/Company%20Icons/Envifuture_hkrhjb.svg';
+const mlogo1 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724338544/Yuga/Company%20Logos/NEw/Yugandhara_Strategic_Holdings-1_zryzm8.svg';
+const mlogo2 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724338545/Yuga/Company%20Logos/NEw/Yugandhara_Strategic_Holdings_nz6qtf.svg';
+const mlogo3 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724338544/Yuga/Company%20Logos/NEw/YUGA_Sports_Entertainment_trb437.svg';
+const mlogo4 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724338544/Yuga/Company%20Logos/NEw/Siga_vrwty2.svg';
 const mlogo5 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261482/Yuga/Company%20Icons/Mask_Production_ebdkyb.svg';
 const mlogo6 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261481/Yuga/Company%20Icons/YUGA_Hospitality_kxvyrq.svg';
 const mlogo7 = 'https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724261479/Yuga/Company%20Icons/Useless_rzzyu0.svg';
@@ -54,37 +54,47 @@ const Hero = () => {
     { logo: logo15 },
     { logo: logo16 },
   ]
-  const [currentImage1, setCurrentImage1] = useState(mlogo1);
   const containerRef = useRef(null);
-  const images = [mlogo1, mlogo2, mlogo3, mlogo4, mlogo5, mlogo6, mlogo7, mlogo8, mlogo9, mlogo10, mlogo11];
+  const images = [mlogo1, mlogo2, mlogo3, mlogo4];
   const imageCount = images.length;
 
   useEffect(() => {
     const container = containerRef.current;
     const imageElements = container.querySelectorAll('.image');
-
+    
     // Initial setup
-    gsap.set(imageElements, { opacity: 0, scale: 1.2 });
-
-    // Create a GSAP timeline
-    const tl = gsap.timeline({ repeat: -1 });
-
-    images.forEach((image, index) => {
-      const imageElement = imageElements[index];
-
-      tl.to(imageElement, {
-        duration: 1,
-        opacity: 1,
-        scale: 1,
-        ease: 'power3.out',
-      })
-      .to(imageElement, {
-        duration: 0.6,
-        opacity: 0,
-        scale: 0.9,
-        ease: 'power3.in',
+    gsap.set(imageElements, { opacity: 0, scale: 0.7 });
+  
+    const animateImages = () => {
+      // Create a GSAP timeline
+      const tl = gsap.timeline({
+        onComplete: () => {
+          // Reset all properties and restart the animation
+          gsap.set(imageElements, { opacity: 0, scale: 0.7 });
+          animateImages(); // Restart the animation
+        }
       });
-    });
+  
+      images.forEach((image, index) => {
+        const imageElement = imageElements[index];
+  
+        tl.to(imageElement, {
+          duration: 1.1,
+          opacity: 1,
+          scale: 1,
+          ease: 'power3.out',
+        })
+        .to(imageElement, {
+          duration: 0.3,
+          opacity: 0,
+          scale: 1.1,
+          ease: 'power3.in',
+        });
+      });
+    };
+  
+    // Start the animation loop
+    animateImages();
   }, [images]);
 
 
@@ -102,25 +112,25 @@ const Hero = () => {
             <img
               src={image}
               alt={`Image ${index + 1}`}
-              className="image w-24 h-auto object-cover"
+              className="image w-24 h-auto object-fill max-sm:w-16"
               style={{ zIndex: 1 }}
             />
           </div>
         ))}
         <div className='w-[70%] max-md:w-[100%]'>
-        <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-32">Yugandhara Strategic Holdings</h1>
+        <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-32 max-sm:pt-28 tracking-[-0.04rem]">Yugandhara Strategic Holdings</h1>
         </div>
-        <div className='pt-4 w-[60%] max-xmlg:w-full'>
+        <div className='pt-4 w-[60%] max-xmlg:w-full max-sm:px-3'>
           <p className='font-gothicbook text-xl max-md:text-lg'>Featuring over 300,000 screens and 1,000 iOS, Android & Web apps - New content weekly.</p>
         </div>
-        <div className='flex flex-row justify-center items-center gap-20 pt-4'>
+        <div className='flex flex-row justify-center items-center gap-6 pt-4 max-sm:gap-2'>
         <a href="">
-          <button className='flex py-3 px-3 bg-[#111111] text-whiteo font-gothicdemi rounded-3xl'>Join for free</button>
+          <button className='flex py-3 px-3 bg-[#111111] text-whiteo font-gothicdemi rounded-3xl max-sm:px-3 max-sm:text-sm'>Join for free</button>
         </a>
         <a href="">
-          <button className='flex flex-row py-3 px-2 bg-[#FFFFFF] font-gothicdemi rounded-3xl border'>See our plans 
+          <button className='flex flex-row py-3 px-2 bg-[#FFFFFF] font-gothicdemi rounded-3xl border max-sm:px-2 max-sm:text-sm'>See our plans 
       <svg
-  className="ml-2 w-4 h-4 mt-1 text-gray-600"
+  className="ml-2 w-4 h-4 mt-1 max-sm:mt-0.5 text-gray-600"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 24 24"
   fill="none"

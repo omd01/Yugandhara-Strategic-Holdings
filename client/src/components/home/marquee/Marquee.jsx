@@ -21,7 +21,7 @@ const Marquee = ({ cards, cards2 }) => {
       {
         y: `-${totalHeight}px`,
         ease: 'none',
-        duration: 10,
+        duration: 20,
         repeat: -1,
         stagger: 0, // Ensures all children move together
         paused: true, // Initialize as paused
@@ -35,7 +35,7 @@ const Marquee = ({ cards, cards2 }) => {
       {
         y: 0,
         ease: 'none',
-        duration: 10,
+        duration: 20,
         repeat: -1,
         stagger: 0, // Ensures all children move together
         paused: true, // Initialize as paused
@@ -73,13 +73,12 @@ const Marquee = ({ cards, cards2 }) => {
 
   const handleMouseDown = () => setIsPaused(true);
   const handleMouseUp = () => setIsPaused(false);
+  
 
   return (
     <div
       className="relative flex items-center justify-center lg:mr-44"
       style={{ height: '88vh' }}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
     >
       <div className="relative min-h-screen w-[calc(130px*2+2px)] xxlg:space-x-10 lg:space-x-5">
         {/* Marquee Scrolling Up */}
@@ -87,11 +86,13 @@ const Marquee = ({ cards, cards2 }) => {
           className="absolute top-0 left-0 flex flex-col"
           style={{ width: '130px', height: '100%' }}
           ref={carouselRefLeft}
+          onMouseEnter={handleMouseDown}
+          onMouseLeave={handleMouseUp}
         >
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -101,7 +102,7 @@ const Marquee = ({ cards, cards2 }) => {
           {cards.map((card, index) => (
             <div
               key={index + cards.length}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -114,11 +115,13 @@ const Marquee = ({ cards, cards2 }) => {
           className="absolute top-0 left-[130px] flex flex-col"
           style={{ width: '130px', height: '100%' }}
           ref={carouselRefRight}
+          onMouseEnter={handleMouseDown}
+          onMouseLeave={handleMouseUp}
         >
           {cards2.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -128,7 +131,7 @@ const Marquee = ({ cards, cards2 }) => {
           {cards2.map((card, index) => (
             <div
               key={index + cards2.length}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />

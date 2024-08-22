@@ -56,8 +56,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <Dialog open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)}>
-        <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-2/3 h-[460px] rounded-lg overflow-y-auto bg-white bg-opacity-95 px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
+        <div className="fixed inset-0 z-50 bg-black/30" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full h-[250px] rounded-lg overflow-y-auto bg-[#F2F2F2] bg-opacity-95 px-6 py-6 sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <button
               type="button"
@@ -68,6 +68,22 @@ const Navbar = () => {
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
+          <nav className="mt-10 space-y-10">
+            <a
+              href="/pricing"
+              className="block text-[#111111] font-gothicbold text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Career
+            </a>
+            <a
+              href="/login"
+              className="block text-[#111111] font-gothicbold text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact
+            </a>
+          </nav>
         </Dialog.Panel>
       </Dialog>
     </header>
