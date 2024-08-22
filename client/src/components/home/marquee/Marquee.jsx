@@ -92,7 +92,7 @@ const Marquee = ({ cards, cards2 }) => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -102,7 +102,7 @@ const Marquee = ({ cards, cards2 }) => {
           {cards.map((card, index) => (
             <div
               key={index + cards.length}
-              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -121,7 +121,7 @@ const Marquee = ({ cards, cards2 }) => {
           {cards2.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -131,7 +131,7 @@ const Marquee = ({ cards, cards2 }) => {
           {cards2.map((card, index) => (
             <div
               key={index + cards2.length}
-              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem]"
+              className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />

@@ -59,7 +59,7 @@ const MarqueeResponsive = ({ cards, cards2 }) => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl flex justify-center items-center"
               style={{ width: '80px', height: '80px', marginRight: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -69,7 +69,7 @@ const MarqueeResponsive = ({ cards, cards2 }) => {
           {cards.map((card, index) => (
             <div
               key={index + cards.length}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl flex justify-center items-center"
               style={{ width: '80px', height: '80px', marginRight: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
@@ -86,7 +86,7 @@ const MarqueeResponsive = ({ cards, cards2 }) => {
           {cards2.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl"
+              className="flex-shrink-0 bg-[#E9E8E4] rounded-3xl flex justify-center items-center"
               style={{ width: '80px', height: '80px', marginRight: '16px' }}
             >
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
