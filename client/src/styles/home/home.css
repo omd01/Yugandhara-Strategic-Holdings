@@ -1,0 +1,37 @@
+.home {
+    position: absolute;
+    top: 0;
+    left: -37%;
+    right: 0;
+    bottom: 0;
+    background-size: 27%; /* Default size */
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Default opacity */
+    z-index: -1; /* Ensures the background is behind content */
+  }
+  
+  @media (max-width: 1024px) {
+    .home {
+      background-size: 40%; /* Adjust for tablet screens */
+      left: -30%;
+      top: -20%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home {
+      background-size: 50%; /* Adjust for small screens */
+      left: -20%;
+      top: -30%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home {
+      background-size: 70%; /* Adjust for very small screens */
+      left: -10%;
+      top: -40%;
+    }
+  }
+  
