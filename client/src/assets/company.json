@@ -1,0 +1,23 @@
+[
+    {
+        "slug": "company-1",
+        "name": "Company 1",
+        "logo": "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724337335/Yuga/Company%20Logos/Yugandhara_Strategic_Holdings_ao84bo.svg",
+        "color": "#000",
+        "description": "Company 1 description"
+    },
+    {
+        "slug": "company-2",
+        "name": "Company 2",
+        "logo": "company2.png",
+        "color": "#0f2",
+        "description": "Company 2 description"
+    },
+    {
+        "slug": "company-3",
+        "name": "Company 3",
+        "logo": "company3.png",
+        "color": "#f00",
+        "description": "Company 3 description"
+    }
+]

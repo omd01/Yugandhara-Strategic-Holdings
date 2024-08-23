@@ -3,6 +3,8 @@ import gsap from "gsap";
 import Marquee from "./marquee/Marquee";
 import MarqueeResponsive from "./marquee/MarqueeResponsive";
 import { cards_one, cards_two, comp_icons } from "../../assets";
+import { Link } from "react-router-dom";
+import companies from "../../assets/company.json";
 
 const Hero = () => {
   const containerRef = useRef(null);
