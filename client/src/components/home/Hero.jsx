@@ -46,7 +46,7 @@ const Hero = () => {
     <section className="hero-section flex flex-row max-xmlg:flex-col h-auto">
       {/* 70% Part */}
       <div
-        className="w-[75%] flex flex-col items-center mt-16 text-center max-xmlg:w-full"
+        className="w-[75%] flex flex-col items-center mt-16 max-sm:mt-12 text-center max-xmlg:w-full"
         ref={containerRef}
       >
         {images.map((image, index) => (
@@ -58,13 +58,13 @@ const Hero = () => {
             <img
               src={image}
               alt={`Image ${index + 1}`}
-              className="image w-24 h-auto object-fill max-sm:w-15"
+              className="image w-23 h-auto object-fill max-sm:w-16"
               style={{ zIndex: 1 }}
             />
           </div>
         ))}
         <div className="w-[70%] max-md:w-[100%]">
-          <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-32 max-sm:pt-28 tracking-[-0.04rem]">
+          <h1 className="relative text-7xl max-md:text-5xl font-gothicbold pt-32 max-sm:pt-24 tracking-[-0.04rem]">
             Yugandhara Strategic Holdings
           </h1>
         </div>
