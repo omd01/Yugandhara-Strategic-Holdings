@@ -3,7 +3,7 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import '../../styles/navigation/Navbar.css';
 import '../../styles/fonts.css';
-import logo from '../../assets/Yugandhara Strategic Holdings.svg'
+// import logo from '../../assets/Yugandhara Strategic Holdings.svg'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="flex items-center max-md:w-36">
         {/* Replace with your actual logo */}
         <a href="/">
-        <img src={logo} alt="Logo" />
+        <img src="https://res.cloudinary.com/dqbwa8i3y/image/upload/v1723978854/Yuga/logo_imcnpq.svg" alt="Logo" />
         </a>
       </div>
 
