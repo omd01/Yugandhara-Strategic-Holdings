@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <header
-      className="nav bg-[#F2F2F2] h-[5.25rem] sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-30"
+      className="nav bg-[#F2F2F2] h-[5.25rem] max-md:pl-5 sticky top-0 left-0 right-0 z-50 flex items-center justify-between px-30"
 
     >
       {/* Logo Section */}
