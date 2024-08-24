@@ -85,7 +85,7 @@ const Hero = () => {
           </a>
           <a href="/companies">
             <button className="flex flex-row py-3 px-2 bg-[#FFFFFF] font-gothicdemi rounded-3xl border max-sm:px-2 max-sm:text-sm">
-              Products
+              Companies
               <svg
                 className="ml-2 w-4 h-4 mt-1 max-sm:mt-0.5 text-gray-600"
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,8 @@
 import { useParams } from "react-router-dom";
 import companyData from "../assets/company.json";
+import Hero from "../components/company/Hero";
+import About from "../components/company/About";
+import Services from "../components/company/services";
 
 const CompanyProfile = () => {
   const { slug } = useParams();
@@ -10,10 +13,10 @@ const CompanyProfile = () => {
   }
 
   return (
-    <div>
-       <h1 style={{ color: company.color }}>{company.name}</h1>
-      <p>Displaying details for company with ID: {slug}</p>
-      {/* Display company information based on companyId */}
+    <div className="h-screen w-full">
+      <Hero company={company}/>
+      <About company={company}/>
+      <Services company={company}/>
     </div>
   );
 };
