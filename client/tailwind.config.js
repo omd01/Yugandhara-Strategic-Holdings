@@ -15,7 +15,9 @@ export default {
       xlg: "1015px",
       xmlg: "1140px",
       xxlg: "1200px",
+      xxxlg: "1290px",
       xl: "1440px",
+      xxl: "1500px",
     },
 
     container: {

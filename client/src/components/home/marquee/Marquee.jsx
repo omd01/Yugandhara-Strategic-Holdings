@@ -1,11 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { setHoveredCard, clearHoveredCard } from '../../../redux/hoverSlice';
 import '../../../styles/hero/Marquee.css'; // Ensure this path is correct
 
-const Marquee = ({ cards, cards2 }) => {
+const Marquee = ({ cards, cards2, hoveredCard }) => {
   const carouselRefLeft = useRef(null);
   const carouselRefRight = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [enterTimeout, setEnterTimeout] = useState(null);
+  const [leaveTimeout, setLeaveTimeout] = useState(null);
 
   useEffect(() => {
     const carouselLeft = carouselRefLeft.current;
@@ -21,7 +27,7 @@ const Marquee = ({ cards, cards2 }) => {
       {
         y: `-${totalHeight}px`,
         ease: 'none',
-        duration: 20,
+        duration: 30,
         repeat: -1,
         stagger: 0, // Ensures all children move together
         paused: true, // Initialize as paused
@@ -35,7 +41,7 @@ const Marquee = ({ cards, cards2 }) => {
       {
         y: 0,
         ease: 'none',
-        duration: 20,
+        duration: 30,
         repeat: -1,
         stagger: 0, // Ensures all children move together
         paused: true, // Initialize as paused
@@ -73,12 +79,74 @@ const Marquee = ({ cards, cards2 }) => {
 
   const handleMouseDown = () => setIsPaused(true);
   const handleMouseUp = () => setIsPaused(false);
+
+  const dispatch = useDispatch();
+
+  const handleMouseEnter = (card) => {
+    // Clear any existing leave timeout
+    if (leaveTimeout) {
+      clearTimeout(leaveTimeout);
+      setLeaveTimeout(null);
+    }
+
+    // Clear any existing enter timeout
+    if (enterTimeout) {
+      clearTimeout(enterTimeout);
+      setEnterTimeout(null);
+    }
+
+    // Set a new timeout for mouse enter with a 700ms delay
+    const timeoutId = setTimeout(() => {
+      dispatch(setHoveredCard(card)); // Dispatch after delay
+    }, 700); // 700 milliseconds delay before dispatching
+
+    // Save the timeout ID so it can be cleared if needed
+    setEnterTimeout(timeoutId);
+  };
+
+  const handleMouseLeave = () => {
+    // Clear any existing enter timeout to prevent accidental hover states being set
+    if (enterTimeout) {
+      clearTimeout(enterTimeout);
+      setEnterTimeout(null);
+    }
+  
+    // Clear any existing leave timeout to prevent it from firing prematurely
+    if (leaveTimeout) {
+      clearTimeout(leaveTimeout);
+      setLeaveTimeout(null);
+    }
+  
+    // Set a new leave timeout to check after a delay
+    const timeoutId = setTimeout(() => {
+      // Check if the mouse is still over the hoveredCard
+      if (hoveredCard.current && !hoveredCard.current.matches(':hover')) {
+        // Animate the card to scale down and fade out
+        gsap.to(hoveredCard.current, {
+          scale: 0.2,
+          x: 350,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power2.in',
+          onComplete: () => {
+            // After animation completes, clear the hovered card
+            dispatch(clearHoveredCard());
+          }
+        });
+      }
+    }, 700); // Delay before clearing hover state
+  
+    // Save the timeout ID to clear it if needed
+    setLeaveTimeout(timeoutId);
+  };
+  
   
 
   return (
     <div
       className="relative flex items-center justify-center lg:mr-44"
       style={{ height: '88vh' }}
+      
     >
       <div className="relative min-h-screen w-[calc(130px*2+2px)] xxlg:space-x-10 lg:space-x-5">
         {/* Marquee Scrolling Up */}
@@ -91,21 +159,31 @@ const Marquee = ({ cards, cards2 }) => {
         >
           {cards.map((card, index) => (
             <div
-              key={index}
+              key={card.id || index}
               className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
+              onMouseEnter={() => handleMouseEnter(card)}
+              onMouseLeave={handleMouseLeave}
+              
             >
+
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
+
             </div>
           ))}
           {/* Duplicate cards to ensure seamless scrolling */}
           {cards.map((card, index) => (
             <div
-              key={index + cards.length}
+              key={card.id || (index + cards.length)}
               className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
+              onMouseEnter={() => handleMouseEnter(card)}
+              onMouseLeave={handleMouseLeave}
+
             >
+
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
+
             </div>
           ))}
         </div>
@@ -117,24 +195,35 @@ const Marquee = ({ cards, cards2 }) => {
           ref={carouselRefRight}
           onMouseEnter={handleMouseDown}
           onMouseLeave={handleMouseUp}
+
         >
           {cards2.map((card, index) => (
             <div
-              key={index}
+              key={card.id || index}
               className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
+              onMouseEnter={() => handleMouseEnter(card)}
+              onMouseLeave={handleMouseLeave}
+ 
             >
+
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
+
             </div>
           ))}
           {/* Duplicate cards to ensure seamless scrolling */}
           {cards2.map((card, index) => (
             <div
-              key={index + cards2.length}
+              key={card.id || (index + cards.length)}
               className="flex-shrink-0 bg-[#F2F2F2] rounded-[2rem] flex justify-center items-center"
               style={{ width: '130px', height: '130px', marginBottom: '16px' }}
+              onMouseEnter={() => handleMouseEnter(card)}
+              onMouseLeave={handleMouseLeave}
+
             >
+
               <img src={card.logo} alt={`Card ${index}`} className="w-full h-full object-cover" />
+
             </div>
           ))}
         </div>
