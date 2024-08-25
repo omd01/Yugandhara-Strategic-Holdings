@@ -5,8 +5,7 @@ import Marquee from "./marquee/Marquee";
 import MarqueeResponsive from "./marquee/MarqueeResponsive";
 import { cards_one, cards_two, comp_icons } from "../../assets";
 import { setHoveredCard, clearHoveredCard } from "../../redux/hoverSlice";
-import '../../styles/hero/hero.css';
-
+import "../../styles/hero/hero.css";
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -23,27 +22,23 @@ const Hero = () => {
   useEffect(() => {
     const container = containerRef.current;
     const imageElements = container.querySelectorAll(".image");
-    const ishadowElement = ishadow.current; // Select the ishadow element
-    
-    // Set initial states
+    const ishadowElement = ishadow.current;
+
     gsap.set(imageElements, { opacity: 0, scale: 0.7 });
-    gsap.set(ishadowElement, { opacity: 0, y: 50 }); // Initial position down and opacity 0
-  
+    gsap.set(ishadowElement, { opacity: 0, y: 50 });
+
     const animateImages = () => {
       const tl = gsap.timeline({
         onComplete: () => {
-          // Reset the image elements to the initial state
           gsap.set(imageElements, { opacity: 0, scale: 0.7 });
-          // Reset the ishadow element to the initial state
           gsap.set(ishadowElement, { opacity: 0 });
-          animateImages(); // Loop the animation
+          animateImages();
         },
       });
-  
+
       images.forEach((image, index) => {
         const imageElement = imageElements[index];
-  
-        // Animate the image element
+
         tl.to(imageElement, {
           duration: 2,
           opacity: 1,
@@ -55,80 +50,70 @@ const Hero = () => {
           scale: 1.1,
           ease: "power3.in",
         });
-  
-        // Animate the ishadow element in sync with the images
+
         tl.to(
           ishadowElement,
           {
             duration: 0.9,
             opacity: 1,
-            y: 0, // Move ishadow to original position
+            y: 0, 
             ease: "power3.out",
           },
-          `-=${0.85}` // Start this animation a little earlier to sync with images
+          `-=${0.85}` 
         ).to(
           ishadowElement,
           {
             duration: 0.3,
             opacity: 0,
-            y: 20, // Move ishadow back down
+            y: 20, 
             ease: "power3.in",
           },
-          `-=${0.3}` // Start this animation a little earlier to sync with images
+          `-=${0.3}`
         );
       });
     };
-  
-    // Start the animation loop
+
+
     animateImages();
   }, [images]);
-  
-  
-  
 
   useEffect(() => {
     const container = containerRef.current;
-    const yugaText = document.querySelector('.yuga-text');
-const text = yugaText.textContent;
+    const yugaText = document.querySelector(".yuga-text");
+    const text = yugaText.textContent;
+    yugaText.innerHTML = text
+      .split("")
+      .map((char) => `<span>${char}</span>`)
+      .join("");
 
-// Split the text into individual characters
-yugaText.innerHTML = text.split('').map(char => `<span>${char}</span>`).join('');
-
-// Select character spans
-const chars = yugaText.querySelectorAll('span');
+    const chars = yugaText.querySelectorAll("span");
     const yugaSubtext = container.querySelector(".yuga-subtext");
     const yugaButtons = container.querySelectorAll(".yuga-btn, .yuga-btn2");
-
-    // Check the href attribute of the current URL
     const currentHref = window.location.pathname;
 
-    // Only apply animation if the href is not '/'
-    if (currentHref === '/') {
-      // Create a GSAP timeline
+    if (currentHref === "/") {
       const tl = gsap.timeline();
 
-      // Animate the yuga-text from the right
-      tl.fromTo(chars, 
+      tl.fromTo(
+        chars,
         {
-          x: "-200%", // Start position (left of the container)
-          opacity: 0, // Initial opacity
+          x: "-200%", 
+          opacity: 0,
         },
         {
-          x: "0%", // End position (original position)
-          opacity: 1, // Final opacity
-          stagger: 0.05, // Delay between each character's animation
-          duration: 0.6, // Duration of the animation
-          ease: "power3.out", // Easing function
+          x: "0%", 
+          opacity: 1, 
+          stagger: 0.05,
+          duration: 0.6, 
+          ease: "power3.out", 
         }
       )
-        // Animate the yuga-subtext with a scaling effect
         .fromTo(
           yugaSubtext,
           { scale: 0.6, opacity: 0 },
           { scale: 1, opacity: 1, duration: 1, ease: "power3.out" },
-          "-=0.9" // Start this animation 0.7 seconds before the previous one ends
+          "-=0.9" 
         )
-        // Animate the buttons from the left
         .fromTo(
           yugaButtons,
           { y: "250%", opacity: 0 },
@@ -143,54 +128,46 @@ const chars = yugaText.querySelectorAll('span');
         );
     }
   }, []);
-  
+
   useEffect(() => {
     if (hoveredCard) {
-      // Start GSAP animation for scaling and translating
       gsap.fromTo(
         cardRef.current,
-        { scale: 0.5, x: 350, opacity: 0 }, // Start state
-        { 
-          scale: 1, 
-          x: 0, 
-          opacity: 1, 
-          duration: 0.5, // Duration of the animation
-          ease: "power2.out" // Easing function
+        { scale: 0.5, x: 350, opacity: 0 }, 
+        {
+          scale: 1,
+          x: 0,
+          opacity: 1,
+          duration: 0.5, 
+          ease: "power2.out",
         }
       );
     }
   }, [hoveredCard]);
 
-
   const handleMouseEnter = (card) => {
-    // Clear any existing leave timeout
     if (enterTimeout) {
       clearTimeout(enterTimeout);
-  }
+    }
 
     if (leaveTimeout) {
       clearTimeout(leaveTimeout);
     }
 
-    // Set a new timeout for mouse enter
     const timeoutId = setTimeout(() => {
       dispatch(setHoveredCard(card));
-    }, 100); // Delay before dispatching setHoveredCard
+    }, 100);
 
-    // Save the timeout ID to clear it if needed
     setEnterTimeout(timeoutId);
   };
 
   const handleMouseLeave = () => {
-    // Clear any existing enter timeout
     if (enterTimeout) {
       clearTimeout(enterTimeout);
     }
-  
-    // Set a new timeout for mouse leave
+
     const timeoutId = setTimeout(() => {
       if (cardRef.current) {
-        // GSAP animation for mouse leave
         gsap.to(cardRef.current, {
           scale: 0.2,
           x: 350,
@@ -198,21 +175,15 @@ const chars = yugaText.querySelectorAll('span');
           duration: 0.4,
           ease: "power2.in",
           onComplete: () => {
-            // Dispatch clearHoveredCard only after animation completes
             dispatch(clearHoveredCard());
           },
         });
       } else {
-        // Dispatch clearHoveredCard immediately if cardRef.current is not available
         dispatch(clearHoveredCard());
       }
-    }, 300); // Delay before dispatching clearHoveredCard
-  
-    // Save the timeout ID to clear it if needed
+    }, 300); 
     setLeaveTimeout(timeoutId);
   };
-
-  
 
   return (
     <section className="hero-section flex flex-row max-xmlg:flex-col h-auto">
@@ -221,46 +192,48 @@ const chars = yugaText.querySelectorAll('span');
         className="w-[75%] flex flex-col items-center mt-16 max-sm:mt-12 text-center max-xmlg:w-full"
         ref={containerRef}
       >
-        <div class="w-23 h-23 bg-[#F2F2F2] absolute rounded-3xl top-[10rem] left-24 shadow-md z-[100]"></div>
+        <div className="w-23 h-23 bg-[#F2F2F2] absolute rounded-3xl top-[10rem] left-24 shadow-md z-[100]"></div>
         {hoveredCard && (
           <div
             ref={cardRef}
-            className="absolute top-[8%] w-[55%] h-[80%] rounded-[2rem] isolate aspect-video  bg-white/30 backdrop-blur-3xl shadow-lg ring-1 ring-black/5 p-4 flex flex-col "
-            style={{ zIndex: 100000 }} // Ensure the card is on top of other elements
+            className="absolute top-[8%] w-[55%] h-[80%] z-50 rounded-[2rem] bg-white/30 backdrop-blur-3xl shadow-lg ring-1 ring-black/5 p-4 flex flex-col justify-center items-center"
             onMouseEnter={() => handleMouseEnter(hoveredCard)} // Maintain hover state
             onMouseLeave={handleMouseLeave}
           >
-            {/* Logo at the top left */}
             <img
               src={hoveredCard.logo}
               alt="Hovered Card Logo"
-              className="w-40 h-auto object-cover rounded-t-[2rem]"
-              style={{ position: 'absolute', top: '0px', left: '16px' }}
+              className="w-40 h-auto object-cover  "
             />
-            
+
             {/* Content container with padding to accommodate logo */}
             <div className="">
-              <div className="xxl:pt-48 pt-36 flex flex-col justify-center items-center text-center">
-              {/* Other card content can go here, if needed */}
-              <div className="text-3xl font-gothicbook ">
-              <p>Yugandhara Strategic Holdings</p>
-              </div>
-              <div className=" text-lg px-16 font-gothicbook">
-              <p>Leading the way in event management, sustainable agriculture, luxury products, and digital solutions, delivering excellence across global industries.</p>
-              </div>
+              <div className="flex flex-col justify-center items-center text-center">
+                {/* Other card content can go here, if needed */}
+                <div className="text-4xl font-gothicmedium my-3">
+                  <h1>{hoveredCard.title}</h1>
+                </div>
+                <div className=" text-lg px-16 font-gothicbook">
+                  <p>
+                    {hoveredCard.desc}
+                  </p>
+                </div>
               </div>
               {/* Read More button centered at the bottom */}
-              <div className="xxl:pt-[8rem] pt-[3rem] pr-5">
-              <a href='#' className="flex justify-end items-center">
-                <button className="py-2 px-4 bg-[#111111] text-white rounded-full hover:bg-[#333333]">
-                  Explore
-                </button>
-              </a>
+              <div className="">
+              <a href={`companies/${hoveredCard.slug}`}>
+                  <button className="py-2 px-6 my-4 bg-[#111111] text-white rounded-full hover:bg-[#333333]">
+                    Explore
+                  </button>
+                </a>
               </div>
             </div>
           </div>
         )}
-        <div ref={ishadow} class="w-[3rem] h-[3rem] bg-[#F2F2F2] absolute flex top-[3.6rem] rounded-xl items-center justify-center  shadow-md"></div>
+        <div
+          ref={ishadow}
+          className="w-[3rem] h-[3rem] bg-[#F2F2F2] absolute flex top-[3.6rem] rounded-xl items-center justify-center  shadow-md"
+        ></div>
         {images.map((image, index) => (
           <div
             key={index}
@@ -316,10 +289,10 @@ const chars = yugaText.querySelectorAll('span');
 
       {/* 30% Part */}
       <div className="w-[25%] overflow-y-hidden overflow-x-hidden max-xmlg:hidden">
-        <Marquee cards={cards_one} cards2={cards_two} hoveredCard={cardRef}/>
+        <Marquee cards={cards_one} cards2={cards_two} hoveredCard={cardRef} />
       </div>
       <div className="pt-16 xmlg:hidden">
-        <MarqueeResponsive cards={cards_one} cards2={cards_two}  />
+        <MarqueeResponsive cards={cards_one} cards2={cards_two} />
       </div>
     </section>
   );

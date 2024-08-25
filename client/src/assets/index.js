@@ -12,10 +12,10 @@ const logo5 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004168/Yuga/Company%20Logos/YUGA_Weddings_p9pdhr.svg";
 const logo6 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004163/Yuga/Company%20Logos/YUGA_Hospitality_vwphur.svg";
-const logo7 =
-  "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Mask_Production_gwcgqx.svg";
-const logo8 =
-  "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004169/Yuga/Company%20Logos/Yugandhara_Foundation_nesbu5.svg";
+// const logo7 =
+//   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Mask_Production_gwcgqx.svg";
+// const logo8 =
+//   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004169/Yuga/Company%20Logos/Yugandhara_Foundation_nesbu5.svg";
 
 const logo9 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004162/Yuga/Company%20Logos/Useless_vn8okj.svg";
@@ -23,10 +23,10 @@ const logo10 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004171/Yuga/Company%20Logos/Envifuture_ks0rmj.svg";
 const logo11 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004161/Yuga/Company%20Logos/TMS_Global_Kitchen_fqa8ss.svg";
-const logo12 =
-  "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004160/Yuga/Company%20Logos/SM_Consultancy_qbfrt4.svg";
-const logo13 =
-  "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yuga/Company%20Logos/Rooh_Photography_zz5hij.svg";
+// const logo12 =
+//   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004160/Yuga/Company%20Logos/SM_Consultancy_qbfrt4.svg";
+// const logo13 =
+//   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yuga/Company%20Logos/Rooh_Photography_zz5hij.svg";
 const logo14 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724004159/Yuga/Company%20Logos/SIGA_bf7iav.svg";
 const logo15 =
@@ -60,29 +60,86 @@ const company_icon_12 =
   "https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724358168/Yuga/Company%20Icon%27s/Envifuture_nat3kt.svg";
 
 export const cards_one = [
-  { id: "card1", logo: logo1 },
-  { id: "card2", logo: logo2 },
-  { id: "card3", logo: logo3 },
-  { id: "card4", logo: logo4 },
-  { id: "card5", logo: logo5 },
-  { id: "card6", logo: logo6 },
-  { id: "card7", logo: logo7 },
-  { id: "card8", logo: logo8 },
+  {
+    id: "card1",
+    slug : "yugandhara-strategic-holdings",
+    logo: logo1,
+    title: "Yugandhara Strategic Holdings",
+    desc: "Leading the way in event management, sustainable agriculture, luxury products, and digital solutions, delivering excellence across global industries.",
+  },
+  {
+    id: "card2",
+    logo: logo2,
+    title: "YUGA Sports & Entertainment",
+    desc: "YUGA Sports & Entertainment is a sports management company that provides a wide range of services to athletes, sports teams, and sports organizations.",
+  },
+  {
+    id: "card3",
+    logo: logo3,
+    title: "Yuga Production House",
+    desc: "Yuga Production House is a full-service production company that specializes in creating high-quality video content for a wide range of clients.",
+  },
+  {
+    id: "card4",
+    logo: logo4,
+    title: "Yuga Studios",
+    desc: "Yuga Studios is a creative studio that specializes in creating high-quality visual content for a wide range of clients.",
+  },
+  {
+    id: "card5",
+    logo: logo5,
+    title: "YUGA Weddings",
+    desc: "YUGA Weddings is a luxury wedding planning company that specializes in creating unforgettable events for clients around the world.",
+  },
+  {
+    id: "card6",
+    logo: logo6,
+    title: "YUGA Hospitality",
+    desc: "YUGA Hospitality is a hospitality management company that provides a wide range of services to hotels, resorts, and other hospitality businesses.",
+  },
 ];
-
 export const cards_two = [
-  { id: "card9", logo: logo9 },
-  { id: "card10", logo: logo10 },
-  { id: "card11", logo: logo11 },
-  { id: "card12", logo: logo12 },
-  { id: "card13", logo: logo13 },
-  { id: "card14", logo: logo14 },
-  { id: "card15", logo: logo15 },
-  { id: "card16", logo: logo16 },
+  {
+    id: "card7",
+    logo: logo9,
+    title: "Useless",
+    desc: "Useless is a digital marketing agency that specializes in creating innovative marketing campaigns for a wide range of clients.",
+  },
+  {
+    id: "card8",
+    logo: logo10,
+    title: "Envifuture",
+    desc: "Envifuture is an environmental consulting firm that provides a wide range of services to help businesses reduce their environmental impact.",
+  },
+  {
+    id: "card9",
+    logo: logo11,
+    title: "TMS Global Kitchen",
+    desc: "TMS Global Kitchen is a food consulting company that specializes in creating innovative food products and recipes for clients around the world.",
+  },
+  {
+    id: "card10",
+    logo: logo14,
+    title: "SIGA",
+    desc: "SIGA is a luxury fashion brand that specializes in creating high-quality clothing and accessories",
+  },
+  {
+    id: "card11",
+    logo: logo15,
+    title: "Urban Farmer",
+    desc: "Urban Farmer is an urban farming company that specializes in creating sustainable farming solutions for urban areas.",
+  },
+  {
+    id: "card12",
+    logo: logo16,
+    title: "Nikaay",
+    desc: "Nikaay is a luxury event planning company that specializes in creating unforgettable events for clients around the world.",
+  },
 ];
 
-export const all_cards = [...cards_one, ...cards_two];
-
+export const all_cards = [...cards_one, ...cards_two].filter(
+  (card) => card.id !== "card9"
+);
 export const comp_icons = [
   company_icon_1,
   company_icon_2,
