@@ -3,7 +3,7 @@ const Hero = ({ company }) => {
   return (
     <div className="h-screen ">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden ">
-        <video autoPlay muted loop className="object-fill opacity-90 bg-black">
+        <video autoPlay muted loop className="object-fill opacity-90 bg-white">
           <source src={video} type="video/mp4" />
         </video>
       </div>
@@ -81,9 +81,9 @@ const Hero = ({ company }) => {
               className="absolute h-6 w-6 -bottom-3 -left-3"
               style={{ background: themecolor }}
             ></div>
-            <h1 className="text-6xl font-bold text-white">Welcome to,</h1>
+            <h1 className="text-6xl font-bold text-white ">Welcome to,</h1>
             <h1
-              className="text-6xl font-bold text-white"
+              className="text-6xl font-bold text-white "
               style={{ color: themecolor }}
             >
               {name}
