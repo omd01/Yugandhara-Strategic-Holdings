@@ -6,13 +6,24 @@ import Services from "../components/company/services";
 import Expertise from "../components/company/Expertise";
 import Mission from "../components/company/Mission";
 import Fotter from "../components/company/Fotter";
+import Navbar from "../components/navigation/Navbar";
 
 const CompanyProfile = () => {
   const { slug } = useParams();
   const company = companyData.find((c) => c.slug === slug);
 
   if (!company) {
-    return <p>Company not found</p>;
+    return (
+      <div className="w-full h-screen flex flex-col">
+      <Navbar />
+      <div className="w-full h-4/5 flex justify-center items-center flex-col">
+        <h1 className="font-gothicmedium text-8xl my-3">404</h1>
+        <h2 className="font-gothicbold text-6xl my-3">Page Not Found</h2>
+        <a href="/"><div className="px-8 py-3 rounded-3xl bg-[#ED1750] text-white text-xl font-gothicmedium"><p>HOME</p></div></a>
+
+      </div>
+      </div>
+    );
   }
 
   return (

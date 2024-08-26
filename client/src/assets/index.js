@@ -98,6 +98,7 @@ export const cards_one = [
   {
     id: "card6",
     logo: logo6,
+    slug : "yuga-hospitality",
     title: "YUGA Hospitality",
     desc: "YUGA Hospitality is a hospitality management company that provides a wide range of services to hotels, resorts, and other hospitality businesses.",
   },
@@ -106,6 +107,7 @@ export const cards_two = [
   {
     id: "card7",
     logo: logo9,
+    slug: "useless",
     title: "Useless",
     desc: "Useless is a digital marketing agency that specializes in creating innovative marketing campaigns for a wide range of clients.",
   },
@@ -119,18 +121,21 @@ export const cards_two = [
   {
     id: "card9",
     logo: logo11,
+    slug: "tms-global-kitchen",
     title: "TMS Global Kitchen",
     desc: "TMS Global Kitchen is a food consulting company that specializes in creating innovative food products and recipes for clients around the world.",
   },
   {
     id: "card10",
     logo: logo14,
+    slug: "siga",
     title: "SIGA",
     desc: "SIGA is a luxury fashion brand that specializes in creating high-quality clothing and accessories",
   },
   {
     id: "card11",
     logo: logo15,
+    slug: "urban-farmer",
     title: "Urban Farmer",
     desc: "Urban Farmer is an urban farming company that specializes in creating sustainable farming solutions for urban areas.",
   },
@@ -143,9 +148,7 @@ export const cards_two = [
   },
 ];
 
-export const all_cards = [...cards_one, ...cards_two].filter(
-  (card) => card.id !== "card9"
-);
+
 export const comp_icons = [
   company_icon_1,
   company_icon_2,

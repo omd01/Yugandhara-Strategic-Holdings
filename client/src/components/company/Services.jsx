@@ -27,18 +27,18 @@ const Services = ({ company }) => {
           {/* Card One */}
           <div className="h-full md:w-1/3 py-10 px-3 md:px-20">
             <div className="h-1/2 border-r-4 border-[#F0F0F0]">
-              <h3 className="text-5xl font-gothicmedium text-wrap">
+              <h3 className="text-5xl font-gothicmedium text-wrap my-4">
                 {card_one_title}
               </h3>
               <p className="text-xl text-slate-500 font-gothicdemi">
                 {card_one_content}
               </p>
             </div>
-            <div className="h-1/2 max-sm:flex max-sm:justify-center max-sm:items-center mt-10">
+            <div className="h-80 max-sm:flex max-sm:justify-center max-sm:items-center mt-10 overflow-hidden">
               <img
                 src={card_one_image}
                 alt={card_one_title}
-                className="h-[18.8rem]"
+                className="h-full w-auto object-cover"
               />
             </div>
           </div>
@@ -46,18 +46,18 @@ const Services = ({ company }) => {
           {/* Card Two */}
            <div className="h-full md:w-1/3 py-10 px-3 md:px-20">
             <div className="h-1/2 border-r-4 border-[#F0F0F0]">
-              <h3 className="text-5xl font-gothicmedium text-wrap">
+              <h3 className="text-5xl font-gothicmedium text-wrap  my-4">
                 {card_two_title}
               </h3>
               <p className="text-xl text-slate-500 font-gothicdemi">
                 {card_two_content}
               </p>
             </div>
-            <div className="h-1/2 max-sm:flex max-sm:justify-center max-sm:items-center mt-10">
+            <div className="h-80 max-sm:flex max-sm:justify-center max-sm:items-center mt-10 overflow-hidden">
               <img
                 src={card_two_image}
                 alt={card_two_title}
-                className="h-[18.8rem]"
+                 className="w-auto h-full object-cover"
               />
             </div>
           </div>
@@ -65,18 +65,18 @@ const Services = ({ company }) => {
           {/* Card Three */}
            <div className="h-full md:w-1/3 py-10 px-3 md:px-20">
             <div className="h-1/2 border-r-4 border-[#F0F0F0]">
-              <h3 className="text-5xl font-gothicmedium text-wrap">
-                {card_one_title}
+              <h3 className="text-5xl font-gothicmedium text-wrap  my-4">
+                {card_three_title}
               </h3>
               <p className="text-xl text-slate-500 font-gothicdemi">
                 {card_three_content}
               </p>
             </div>
-            <div className="h-1/2 max-sm:flex max-sm:justify-center max-sm:items-center mt-10">
+            <div className="h-80 max-sm:flex max-sm:justify-center max-sm:items-center mt-10 overflow-hidden">
               <img
-                src={card_one_image}
-                alt={card_one_title}
-                className="h-[18.8rem]"
+                src={card_three_image}
+                alt={card_three_title}
+               className=" h-full w-full object-cover"
               />
             </div>
           </div>
