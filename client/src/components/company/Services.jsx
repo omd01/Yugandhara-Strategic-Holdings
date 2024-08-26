@@ -1,83 +1,83 @@
 const Services = ({ company }) => {
-  const { name, themecolor, card_one } = company;
+  const {
+    name,
+    themecolor,
+    card_one_title,
+    card_one_content,
+    card_one_image,
+    card_two_title,
+    card_two_content,
+    card_two_image,
+    card_three_title,
+    card_three_content,
+    card_three_image,
+  } = company;
+
   return (
-    <div className="w-full h-full">
-      <div className="flex flex-col">
+    <div className="w-full h-auto">
+      <div className="flex flex-col h-full">
         <div className="px-3 py-5 bg-[#F0F0F0] flex">
-          <h1 className="text-8xl font-gothicmedium">services</h1>
+          <h1 className=" text-7xl md:*:text-8xl font-gothicmedium">services</h1>
           <div
-            className=" h-4 w-4 self-end mx-2 mb-4"
+            className="h-3 w-3 self-end mx-2 mb-4"
             style={{ background: themecolor }}
           ></div>
         </div>
-        <div className="flex ">
-          <div className="h-full w-1/3 py-10 px-20">
-            <div className="h-1/2  border-r-4 border-[#F0F0F0]">
+        <div className="flex flex-col md:flex-row h-full">
+          {/* Card One */}
+          <div className="h-full md:w-1/3 py-10 px-3 md:px-20">
+            <div className="h-1/2 border-r-4 border-[#F0F0F0]">
               <h3 className="text-5xl font-gothicmedium text-wrap">
-                Industry Focus.
+                {card_one_title}
               </h3>
               <p className="text-xl text-slate-500 font-gothicdemi">
-                Automobile, Consumer Durables, FMCG, IT
+                {card_one_content}
               </p>
-              
-              <div className="w-14 h-12 my-5 bg-black rounded-lg flex justify-start items-center">
-                <img
-                  src="https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724594570/Yuga/right-arrow_pbnvnv.svg"
-                  alt=""
-                  className="w-7 h-7 mx-3"
-                />
-         
             </div>
-            </div>
-           
-            <div className="h-1/2 ">
-            <img src={card_one} alt="" className="h-[18.8rem]" />
+            <div className="h-1/2 max-sm:flex max-sm:justify-center max-sm:items-center mt-10">
+              <img
+                src={card_one_image}
+                alt={card_one_title}
+                className="h-[18.8rem]"
+              />
             </div>
           </div>
-          <div className="h-full w-1/3 py-10 px-20">
-            <div className="h-1/2  border-r-4 border-[#F0F0F0]">
+
+          {/* Card Two */}
+           <div className="h-full md:w-1/3 py-10 px-3 md:px-20">
+            <div className="h-1/2 border-r-4 border-[#F0F0F0]">
               <h3 className="text-5xl font-gothicmedium text-wrap">
-                Industry Focus.
+                {card_two_title}
               </h3>
               <p className="text-xl text-slate-500 font-gothicdemi">
-                Automobile, Consumer Durables, FMCG, IT
+                {card_two_content}
               </p>
-              
-              <div className="w-14 h-12 my-5 bg-black rounded-lg flex justify-start items-center">
-                <img
-                  src="https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724594570/Yuga/right-arrow_pbnvnv.svg"
-                  alt=""
-                  className="w-7 h-7 mx-3"
-                />
-         
             </div>
-            </div>
-           
-            <div className="h-1/2 ">
-            <img src={card_one} alt="" className="h-[18.8rem]" />
+            <div className="h-1/2 max-sm:flex max-sm:justify-center max-sm:items-center mt-10">
+              <img
+                src={card_two_image}
+                alt={card_two_title}
+                className="h-[18.8rem]"
+              />
             </div>
           </div>
-          <div className="h-full w-1/3 py-10 px-20">
-            <div className="h-1/2  border-r-4 border-[#F0F0F0]">
+
+          {/* Card Three */}
+           <div className="h-full md:w-1/3 py-10 px-3 md:px-20">
+            <div className="h-1/2 border-r-4 border-[#F0F0F0]">
               <h3 className="text-5xl font-gothicmedium text-wrap">
-                Industry Focus.
+                {card_one_title}
               </h3>
               <p className="text-xl text-slate-500 font-gothicdemi">
-                Automobile, Consumer Durables, FMCG, IT
+                {card_three_content}
               </p>
-              
-              <div className="w-14 h-12 my-5 bg-black rounded-lg flex justify-start items-center">
-                <img
-                  src="https://res.cloudinary.com/dqbwa8i3y/image/upload/v1724594570/Yuga/right-arrow_pbnvnv.svg"
-                  alt=""
-                  className="w-7 h-7 mx-3"
-                />
-         
             </div>
-            </div>
-           
-            <div className="h-1/2 ">
-            <img src={card_one} alt="" className="h-[18.8rem]" />
+            <div className="h-1/2 max-sm:flex max-sm:justify-center max-sm:items-center mt-10">
+              <img
+                src={card_one_image}
+                alt={card_one_title}
+                className="h-[18.8rem]"
+              />
             </div>
           </div>
         </div>

@@ -8,8 +8,8 @@ const About = ({ company }) => {
             About Us
           </span>
         </div>
-        <div className="w-3/4">
-          <p className="text-center text-6xl font-gothicdemi leading-[3.7rem] ">
+        <div className=" md:w-3/4 max-sm:px-2">
+          <p className="text-center  text-4xl md:text-6xl font-gothicdemi md:leading-[3.7rem] ">
             <span className="">
               {about_p_one}
               <span style={{ color: themecolor }}>{about_p_two}</span>
@@ -21,7 +21,7 @@ const About = ({ company }) => {
       <div className="absolute right-0 bottom-0">
         <img
           src="https://res.cloudinary.com/dqbwa8i3y/image/upload/v1723978126/Yuga/Bottom_design_1_fea5k1.svg"
-          className="h-80 w-auto"
+          className="h-40 md:h-80 w-auto"
           alt=""
         />
       </div>
