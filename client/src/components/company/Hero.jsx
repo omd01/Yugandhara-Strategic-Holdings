@@ -1,27 +1,59 @@
+import React, { useEffect } from "react";
+import gsap from "gsap";
+
 const Hero = ({ company }) => {
   const { name, slug, logo, video, aboutLogo, themecolor } = company;
+
+  useEffect(() => {
+    
+    gsap.fromTo(
+      '.hero-title', 
+      { opacity: 0, y: 60 }, 
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' } 
+    );
+  }, []);
+
   return (
     <div className="h-screen bg-black" id="hero">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <video autoPlay muted loop className="object-cover w-full h-full opacity-40">
+        <video
+          autoPlay
+          muted
+          loop
+          className="object-cover w-full h-full opacity-40"
+        >
           <source src={video} type="video/mp4" />
         </video>
       </div>
       <div className="relative z-10 flex  w-full h-full">
-
         <div className="h-full  flex-col border-r bg-white/50 backdrop-blur-3xl border-slate-400 hidden md:flex">
-          <div className="h-1/2 border-b border-slate-400 flex flex-col justify-between">
+          {/* changed to justify-around */}
+          <div className="h-1/2 border-b border-slate-400 flex flex-col justify-around">
             <div>
-             <a href="/"> <img src={logo} alt={name} className="w-52 px-3" /></a>
+              <a href="/">
+                {" "}
+                <img src={logo} alt={name} className="w-52 px-3" />
+              </a>
             </div>
             <div>
-              <ul className="font-gothicmedium text-lg px-2 my-10 text-center">
-                <a href="#aboutus"></a><li className="text-slate-900 p-1 underline cursor-pointer">
+              {/* removed the my-8 due to problem in responsivity */}
+              <ul className="font-gothicmedium text-lg px-2 text-center">
+                <a href="#aboutus"></a>
+                <li className="text-slate-900 p-1 underline cursor-pointer">
                   About Us
                 </li>
-                <a href="#services"><li className="text-black p-1 cursor-pointer">Services</li></a>
-                <a href="#expertise"><li className="text-black p-1 cursor-pointer">Our Expertise</li></a>
-                <a href="#mission"> <li className="text-black p-1 cursor-pointer">Our Mission</li></a>
+                <a href="#services">
+                  <li className="text-black p-1 cursor-pointer">Services</li>
+                </a>
+                <a href="#expertise">
+                  <li className="text-black p-1 cursor-pointer">
+                    Our Expertise
+                  </li>
+                </a>
+                <a href="#mission">
+                  {" "}
+                  <li className="text-black p-1 cursor-pointer">Our Mission</li>
+                </a>
               </ul>
             </div>
           </div>
@@ -31,7 +63,7 @@ const Hero = ({ company }) => {
               Our Socials
             </p>
             <div className="flex flex-col">
-              <div className="w-14 h-14 hover:bg-black text-black hover:text-white border border-black rounded-full mb-2 flex justify-center items-center">
+              <div className="w-14 h-14 cursor-pointer hover:bg-black text-black hover:text-white border border-black rounded-full mb-2 flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -44,7 +76,7 @@ const Hero = ({ company }) => {
                   />
                 </svg>
               </div>
-              <div className="w-14 h-14 hover:bg-black text-black hover:text-white border border-black  rounded-full mb-2 flex justify-center items-center">
+              <div className="w-14 h-14 cursor-pointer hover:bg-black text-black hover:text-white border border-black  rounded-full mb-2 flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -60,7 +92,7 @@ const Hero = ({ company }) => {
                   </g>
                 </svg>
               </div>
-              <div className="w-14 h-14 hover:bg-black text-black hover:text-white border border-black rounded-full mb-2 flex justify-center items-center">
+              <div className="w-14 h-14 cursor-pointer hover:bg-black text-black hover:text-white border border-black rounded-full mb-2 flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -77,17 +109,17 @@ const Hero = ({ company }) => {
           </div>
         </div>
 
-  
-
         <div className="flex flex-col w-full font-gothicbold max-md:justify-center">
           <div className="md:h-1/2 border-b border-slate-400 flex flex-col justify-end p-4 md:p-11  relative">
             <div
               className="absolute h-6 w-6 -bottom-3 -left-3"
               style={{ background: themecolor }}
             ></div>
-            <h1 className="max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg shadow-white">Welcome to,</h1>
+            <h1 className="max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg shadow-white">
+              Welcome to,
+            </h1>
             <h1
-              className="max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg"
+              className="hero-title max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg"
               style={{ color: themecolor }}
             >
               {name}

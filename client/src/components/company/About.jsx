@@ -1,5 +1,31 @@
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const About = ({ company }) => {
   const { about_p_one, about_p_two, about_p_three, themecolor } = company;
+  useEffect(() => {
+   
+    const isMobile = window.innerWidth <= 768;
+    const startValue = isMobile ? "top 80%" : "top 40%";
+
+    gsap.fromTo(
+      ".about-text", 
+      { opacity: 0, y: 60 }, 
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#aboutus", 
+          start: startValue, 
+        },
+      }
+    );
+  }, []);
   return (
     <div className="w-full h-full relative " id="aboutus">
       <div className=" h-2/3 w-full flex items-center justify-center flex-col">
@@ -9,7 +35,7 @@ const About = ({ company }) => {
           </span>
         </div>
         <div className=" md:w-3/4 max-sm:px-2">
-          <p className="text-center  text-4xl md:text-6xl font-gothicdemi md:leading-[3.7rem] ">
+          <p className="text-center  text-4xl md:text-6xl font-gothicdemi md:leading-[3.7rem] about-text">
             <span className="">
               {about_p_one}
               <span style={{ color: themecolor }}>{about_p_two}</span>
