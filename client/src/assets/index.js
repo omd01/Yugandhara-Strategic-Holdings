@@ -70,24 +70,28 @@ export const cards_one = [
   {
     id: "card2",
     logo: logo2,
+    slug : "yuga-sports-entertainment",
     title: "YUGA Sports & Entertainment",
     desc: "YUGA Sports & Entertainment is a sports management company that provides a wide range of services to athletes, sports teams, and sports organizations.",
   },
   {
     id: "card3",
     logo: logo3,
+    slug : "yuga-production-house",
     title: "Yuga Production House",
     desc: "Yuga Production House is a full-service production company that specializes in creating high-quality video content for a wide range of clients.",
   },
   {
     id: "card4",
     logo: logo4,
+    slug : "yuga-studios",
     title: "Yuga Studios",
     desc: "Yuga Studios is a creative studio that specializes in creating high-quality visual content for a wide range of clients.",
   },
   {
     id: "card5",
     logo: logo5,
+    slug : "yuga-weddings",
     title: "YUGA Weddings",
     desc: "YUGA Weddings is a luxury wedding planning company that specializes in creating unforgettable events for clients around the world.",
   },
@@ -108,6 +112,7 @@ export const cards_two = [
   {
     id: "card8",
     logo: logo10,
+    slug: "envifuture",
     title: "Envifuture",
     desc: "Envifuture is an environmental consulting firm that provides a wide range of services to help businesses reduce their environmental impact.",
   },
@@ -132,6 +137,7 @@ export const cards_two = [
   {
     id: "card12",
     logo: logo16,
+    slug: "nikaay",
     title: "Nikaay",
     desc: "Nikaay is a luxury event planning company that specializes in creating unforgettable events for clients around the world.",
   },

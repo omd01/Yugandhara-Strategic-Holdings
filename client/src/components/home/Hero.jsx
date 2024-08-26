@@ -223,7 +223,7 @@ const Hero = () => {
               </div>
               {/* Read More button centered at the bottom */}
               <div className="">
-              <a href={`companies/${hoveredCard.slug}`}>
+              <a href={`/company/${hoveredCard.slug}`}>
                   <button className="py-2 px-6 my-4 bg-[#111111] text-white rounded-full hover:bg-[#333333]">
                     Explore
                   </button>
