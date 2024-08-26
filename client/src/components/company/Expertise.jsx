@@ -10,7 +10,7 @@ const Expertise = ({ company }) => {
     expertise_three,
   } = company;
   return (
-    <div className="w-full h-auto ">
+    <div className="w-full h-auto " id="expertise">
       <div className="  w-full h-full flex items-center justify-center flex-col">
         <div className="py-12">
           <span className="text-lg border rounded-full px-5 py-2 font-gothicdemi ">

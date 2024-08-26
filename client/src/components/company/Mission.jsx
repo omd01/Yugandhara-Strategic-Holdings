@@ -2,7 +2,7 @@ const Mission = ({ company }) => {
   const { themecolor, mission_mission, mission_commitment } = company;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full" id="mission">
       <div className="flex flex-col h-full ">
         <div className="px-3 py-5 flex items-center justify-center">
           <h1 className=" text-7xl md:*:text-8xl font-gothicmedium">Mission</h1>

@@ -1,7 +1,7 @@
 const Hero = ({ company }) => {
   const { name, slug, video, aboutLogo, themecolor } = company;
   return (
-    <div className="h-screen bg-black">
+    <div className="h-screen bg-black" id="hero">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <video autoPlay muted loop className="object-cover w-full h-full opacity-40">
           <source src={video} type="video/mp4" />
@@ -16,12 +16,12 @@ const Hero = ({ company }) => {
             </div>
             <div>
               <ul className="font-gothicbook px-2 my-10">
-                <li className="text-slate-300 p-1 underline cursor-pointer">
+                <a href="#aboutus"></a><li className="text-slate-300 p-1 underline cursor-pointer">
                   About Us
                 </li>
-                <li className="text-white p-1 cursor-pointer">Services</li>
-                <li className="text-white p-1 cursor-pointer">Our Expertise</li>
-                <li className="text-white p-1 cursor-pointer">Our Mission</li>
+                <a href="#services"><li className="text-white p-1 cursor-pointer">Services</li></a>
+                <a href="#expertise"><li className="text-white p-1 cursor-pointer">Our Expertise</li></a>
+                <a href="#mission"> <li className="text-white p-1 cursor-pointer">Our Mission</li></a>
               </ul>
             </div>
           </div>

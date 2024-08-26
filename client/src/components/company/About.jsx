@@ -1,7 +1,7 @@
 const About = ({ company }) => {
   const { about_p_one, about_p_two, about_p_three, themecolor } = company;
   return (
-    <div className="w-full h-full relative ">
+    <div className="w-full h-full relative " id="aboutus">
       <div className=" h-2/3 w-full flex items-center justify-center flex-col">
         <div className="py-12">
           <span className="text-lg border rounded-full px-5 py-2 font-gothicdemi ">
