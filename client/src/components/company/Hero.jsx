@@ -1,5 +1,5 @@
 const Hero = ({ company }) => {
-  const { name, slug, video, aboutLogo, themecolor } = company;
+  const { name, slug, logo, video, aboutLogo, themecolor } = company;
   return (
     <div className="h-screen bg-black" id="hero">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -9,29 +9,29 @@ const Hero = ({ company }) => {
       </div>
       <div className="relative z-10 flex  w-full h-full">
 
-        <div className="h-full  flex-col border-r border-slate-400 hidden md:flex">
+        <div className="h-full  flex-col border-r bg-white/50 backdrop-blur-3xl border-slate-400 hidden md:flex">
           <div className="h-1/2 border-b border-slate-400 flex flex-col justify-between">
             <div>
-              <img src={aboutLogo} alt={name} className="w-40 px-3 py-5" />
+             <a href="/"> <img src={logo} alt={name} className="w-52 px-3" /></a>
             </div>
             <div>
-              <ul className="font-gothicbook px-2 my-10">
-                <a href="#aboutus"></a><li className="text-slate-300 p-1 underline cursor-pointer">
+              <ul className="font-gothicmedium text-lg px-2 my-10 text-center">
+                <a href="#aboutus"></a><li className="text-slate-900 p-1 underline cursor-pointer">
                   About Us
                 </li>
-                <a href="#services"><li className="text-white p-1 cursor-pointer">Services</li></a>
-                <a href="#expertise"><li className="text-white p-1 cursor-pointer">Our Expertise</li></a>
-                <a href="#mission"> <li className="text-white p-1 cursor-pointer">Our Mission</li></a>
+                <a href="#services"><li className="text-black p-1 cursor-pointer">Services</li></a>
+                <a href="#expertise"><li className="text-black p-1 cursor-pointer">Our Expertise</li></a>
+                <a href="#mission"> <li className="text-black p-1 cursor-pointer">Our Mission</li></a>
               </ul>
             </div>
           </div>
 
           <div className="h-1/2 py-6 flex items-center  flex-col">
-            <p className="text-white p-1 cursor-pointer self-center mb-4">
+            <p className="text-black p-1 cursor-pointer self-center mb-4">
               Our Socials
             </p>
             <div className="flex flex-col">
-              <div className="w-14 h-14 hover:bg-slate-100 text-slate-100 hover:text-black border rounded-full mb-2 flex justify-center items-center">
+              <div className="w-14 h-14 hover:bg-black text-black hover:text-white border border-black rounded-full mb-2 flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -44,7 +44,7 @@ const Hero = ({ company }) => {
                   />
                 </svg>
               </div>
-              <div className="w-14 h-14 hover:bg-slate-100 text-slate-100 hover:text-black border  rounded-full mb-2 flex justify-center items-center">
+              <div className="w-14 h-14 hover:bg-black text-black hover:text-white border border-black  rounded-full mb-2 flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -60,7 +60,7 @@ const Hero = ({ company }) => {
                   </g>
                 </svg>
               </div>
-              <div className="w-14 h-14 hover:bg-slate-100 text-slate-100 hover:text-black border rounded-full mb-2 flex justify-center items-center">
+              <div className="w-14 h-14 hover:bg-black text-black hover:text-white border border-black rounded-full mb-2 flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2rem"
@@ -85,7 +85,7 @@ const Hero = ({ company }) => {
               className="absolute h-6 w-6 -bottom-3 -left-3"
               style={{ background: themecolor }}
             ></div>
-            <h1 className="max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg">Welcome to,</h1>
+            <h1 className="max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg shadow-white">Welcome to,</h1>
             <h1
               className="max-sm:text-4xl text-7xl font-bold text-white drop-shadow-lg"
               style={{ color: themecolor }}
