@@ -22,22 +22,22 @@ const Expertise = ({ company }) => {
   useEffect(() => {
     const isMobile = window.innerWidth <= 768;
     const startValue = isMobile ? "top 50%" : "top 80%";
-
+    console.log(isMobile);
     // Animate the paragraph
     gsap.fromTo(
       paragraphRef.current,
       {
-        y: 100, 
+        y: 100,
         opacity: 0,
       },
       {
-        y: 0, 
+        y: 0,
         opacity: 1,
         duration: 1.5,
         ease: "power4.out",
         scrollTrigger: {
           trigger: "#expertise",
-          start: startValue,
+         
         },
       }
     );
@@ -56,9 +56,9 @@ const Expertise = ({ company }) => {
           duration: 1.5,
           ease: "power4.out",
           scrollTrigger: {
-            trigger: cardRef,
-            start: startValue,
-            toggleActions: "play none none none",
+            trigger: "#expertise",
+           
+          
           },
         }
       );
