@@ -35,7 +35,7 @@ const About = ({ company }) => {
           </span>
         </div>
         <div className=" md:w-3/4 max-sm:px-2">
-          <p className="text-center  text-4xl md:text-6xl font-gothicdemi md:leading-[3.7rem] about-text">
+          <p className="text-center text-3xl  md:text-6xl font-gothicdemi md:leading-[3.7rem] about-text">
             <span className="">
               {about_p_one}
               <span style={{ color: themecolor }}>{about_p_two}</span>

@@ -73,6 +73,8 @@ const Expertise = ({ company }) => {
             Our Expertise
           </span>
         </div>
+       
+
         <div className="md:w-3/4 max-sm:px-2 mb-10 flex justify-center items-center flex-col">
           <p
             ref={paragraphRef}
@@ -84,11 +86,10 @@ const Expertise = ({ company }) => {
               {expertise_p_three}
             </span>
           </p>
-
-          <div className="md:w-3/4 h-full my-5 md:my-10">
-            <img src={expertise_image} alt="" className="h-full w-full" />
+ <div className="w-full overflow-hidden h-96 my-5 md:my-10 ">
+            <img src={expertise_image} alt="" className="h-full w-full object-cover" />
           </div>
-
+          
           <div className="flex justify-around flex-col md:flex-row my-9 md:ml-28">
             <div
               ref={(el) => (cardRefs.current[0] = el)}

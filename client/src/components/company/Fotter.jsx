@@ -94,15 +94,15 @@ function Fotter({ company }) {
   return (
     <div className='w-full bg-slate-50 mt-10 relative' ref={footerRef} id='footer'>
       <div className='w-full flex flex-col md:flex-row '>
-        <div className='md:w-1/2 h-1/5 px-5 md:px-20'>
+        <div className='md:w-1/2 h-1/5  md:px-20'>
           <img
             src={bg}
             alt=""
             className='h-full absolute md:left-20 top-0 p-3 md:p-10 opacity-20 select-none'
           />
-          <div className='md:py-20 max:sm:w-full'>
+          <div className='md:py-20 max:sm:w-full flex justify-center flex-col items-center w-full'>
             <img src={logo} alt={name} className="w-52 px-3 py-5" ref={logoRef} />
-            <h1 className=" text-2xl md:text-3xl font-gothicbold">{name}</h1>
+            <h1 className=" text-2xl md:text-3xl font-gothicbold text-center">{name}</h1>
           </div>
         </div>
         <div className='md:w-1/2 flex justify-center items-center'>

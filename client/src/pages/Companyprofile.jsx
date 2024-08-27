@@ -17,6 +17,7 @@ const CompanyProfile = () => {
   const [loading, setLoading] = useState(true);
 
   if (!company) {
+    setLoading(false);
     return (
       <div className="w-full h-screen flex flex-col">
         <Navbar />
