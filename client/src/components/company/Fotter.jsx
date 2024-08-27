@@ -15,80 +15,79 @@ function Fotter({ company }) {
   const copyrightRef = useRef(null);
 
   useEffect(() => {
-    gsap.fromTo(
-      footerRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger:'#footer',
-          start: 'top 80%',
-        },
-      }
-    );
+    const isDesktop = window.innerWidth >= 768; // Adjust the breakpoint as needed
 
-    gsap.fromTo(
-      logoRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger:'#footer',
-          start: 'top 80%',
-        },
-      }
-    );
+    if (isDesktop) {
+      gsap.fromTo(
+        footerRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: '#footer',
+          },
+        }
+      );
 
-    gsap.fromTo(
-      helpfulLinksRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger:'#footer',
-          start: 'top 80%',
-        },
-      }
-    );
+      gsap.fromTo(
+        logoRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: '#footer',
+          },
+        }
+      );
 
-    gsap.fromTo(
-      contactRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger:'#footer',
-          start: 'top 80%',
-        },
-      }
-    );
+      gsap.fromTo(
+        helpfulLinksRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: '#footer',
+          },
+        }
+      );
 
-    gsap.fromTo(
-      copyrightRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1.5,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger:'#footer' ,
-          start: 'top 80%',
-        },
-      }
-    );
+      gsap.fromTo(
+        contactRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: '#footer',
+          },
+        }
+      );
+
+      gsap.fromTo(
+        copyrightRef.current,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: '#footer',
+          },
+        }
+      );
+    }
   }, []);
 
   return (
