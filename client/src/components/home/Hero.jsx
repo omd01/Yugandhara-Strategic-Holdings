@@ -188,10 +188,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section flex flex-row max-xmlg:flex-col h-auto">
+    <section className="hero-section flex flex-row max-xmlg:flex-col h-auto ">
       {/* 70% Part */}
       <div
-        className="w-[75%] flex flex-col items-center mt-16 max-sm:mt-12 text-center max-xmlg:w-full"
+        className="w-[75%] flex flex-col items-center mt-16 max-sm:mt-12 text-center max-xmlg:w-full "
         ref={containerRef}
       >
         <div className="w-23 h-23 bg-[#F2F2F2] absolute rounded-3xl top-[10rem] left-24 shadow-md z-[100]"></div>
@@ -290,7 +290,7 @@ const Hero = () => {
       </div>
 
       {/* 30% Part */}
-      <div className="w-[25%] overflow-y-hidden overflow-x-hidden max-xmlg:hidden">
+      <div className="w-[25%] overflow-y-hidden overflow-x-hidden max-xmlg:hidden ">
         <Marquee cards={cards_one} cards2={cards_two} hoveredCard={cardRef} />
       </div>
       <div className="pt-16 xmlg:hidden">

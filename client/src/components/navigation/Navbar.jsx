@@ -26,7 +26,7 @@ const Navbar = () => {
     if (rightSectionRef.current) {
       gsap.fromTo(
         rightSectionRef.current.children,
-        { x: 100, opacity: 0 }, // Start position (off-screen to the right)
+        { x: 10, opacity: 0 }, // Start position (off-screen to the right)
         {
           x: 0, // End position (original position)
           opacity: 1,
