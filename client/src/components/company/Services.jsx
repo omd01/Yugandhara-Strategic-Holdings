@@ -108,7 +108,7 @@ const Services = ({ company }) => {
   }, []);
 
   return (
-    <div className="w-full h-auto" id="services">
+    <div className="w-full h-auto overflow-hidden" id="services">
       <div className="flex flex-col h-full">
         <div className="px-3 md:px-16 py-5 bg-[#F0F0F0] flex">
           <h1 className=" text-7xl md:*:text-8xl font-gothicmedium">services</h1>

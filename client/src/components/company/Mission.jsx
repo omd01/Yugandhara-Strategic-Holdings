@@ -21,7 +21,7 @@ const Mission = ({ company }) => {
     gsap.fromTo(
       boxRef.current,
       {
-        x: 300,
+        x: 20,
         rotate: 720,
         opacity: 0,
       },
@@ -115,7 +115,7 @@ const Mission = ({ company }) => {
   }, []);
   return (
   
-    <div className="w-full h-full bg-[#111111] py-10" id="mission">
+    <div className="w-full h-full bg-[#111111] py-10 overflow-hidden" id="mission">
       {/* changed the background color and font color*/}
       <div className="flex flex-col h-full">
         <div className="px-3 py-5 flex items-center justify-center">
@@ -142,7 +142,9 @@ const Mission = ({ company }) => {
           </div>
           <div className="right md:w-1/2 flex justify-center border-b-4 md:border-slate-400 items-center h-full">
             <div className="px-3 py-5 flex items-center justify-center">
-              <p ref={text1Ref} className="text-xl md:text-3xl font-gothicmedium text-[#ffffff] ">
+              <p 
+              ref={text1Ref}
+               className="text-xl md:text-3xl font-gothicmedium text-[#ffffff] ">
                 {mission_mission}
               </p>
             </div>
@@ -164,7 +166,9 @@ const Mission = ({ company }) => {
           </div>
           <div className="right md:w-1/2 flex justify-center  items-center h-full">
             <div className="px-3 py-5 flex items-center justify-center">
-              <p ref={text2Ref} className="text-xl md:text-3xl font-gothicmedium text-[#ffffff]">
+              <p
+               ref={text2Ref}
+               className="text-xl md:text-3xl font-gothicmedium text-[#ffffff]">
                 {mission_commitment}
               </p>
             </div>

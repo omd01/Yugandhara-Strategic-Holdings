@@ -16,8 +16,7 @@ const CompanyProfile = () => {
   const { themecolor } = company;
   const [loading, setLoading] = useState(true);
 
-  if (!company) {
-    setLoading(false);
+  if (!themecolor) {
     return (
       <div className="w-full h-screen flex flex-col">
         <Navbar />
