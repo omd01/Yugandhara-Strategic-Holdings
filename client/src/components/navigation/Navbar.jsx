@@ -55,7 +55,7 @@ const Navbar = () => {
         <a href="" className="text-[#111111] font-gothicbold max-sm:hidden">
           Career
         </a>
-        <a href="/contact" className="text-[#111111] font-gothicbold max-sm:hidden">
+        <a href="/" className="text-[#111111] font-gothicbold max-sm:hidden">
           Contact
         </a>
         <button
@@ -92,7 +92,7 @@ const Navbar = () => {
               Career
             </a>
             <a
-              href="/contact"
+              href="/"
               className="block text-[#111111] font-gothicbold text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
