@@ -52,9 +52,6 @@ const Navbar = () => {
 
       {/* Right Section */}
       <div className="flex items-center space-x-10 pr-3 text-lg" ref={rightSectionRef}>
-        <a href="" className="text-[#111111] font-gothicbold max-sm:hidden">
-          Career
-        </a>
         <a href="/" className="text-[#111111] font-gothicbold max-sm:hidden">
           Contact
         </a>
