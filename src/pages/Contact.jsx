@@ -6,34 +6,25 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <section className="hero-section flex flex-row max-md:flex-col h-auto mt-5 xmlg:pl-28 xmlg:pr-28">
+      <section className=" flex justify-center items-center flex-row max-md:flex-col h-auto mt-5 xmlg:pl-28 xmlg:pr-28">
         <div className="container w-[50%] max-md:w-full flex flex-col items-center">
-          <div className="max-w-xl ">
-            <h1 className="text-4xl max-md:text-2xl font-gothicbold">
-              Talk to our product analytics expert
+          <div className="max-w-xl h-full ">
+            <h1 className="text-5xl max-md:text-2xl font-gothicbold my-5">
+              Contact Us Today
             </h1>
-            <p className="font-gothicbook text-md  pt-3">
-              Have questions on pricing, plans or growthly? Fill out the form
-              and our product analytics expert will be in touch directly.
+            <p className="font-gothicbook text-md md:text-lg  pt-3">
+              We are here to help you with any questions you may have. Fill out
+              the form and our team will be in touch shortly.
             </p>
           </div>
-          <div className="max-w-xl">
-            <h1 className="text-2xl font-gothicbold pt-2">Our Office</h1>
-            <img
-              src={officeimg}
-              alt="office image"
-              className="w-[70%] h-auto max-md:hidden"
-            />
-            <p className="font-gothicbook text-md pt-1 ">
-              Have questions about pricing, plans, or growthly? Fill out the
-              form and our product analytics expert will be in touch directly
-            </p>
-            <div className="flex flex-row items-start justify-start pt-5">
+          <div className="w-full px-2">
+          
+            <div className="flex flex-row items-start justify-start pt-5 text-lg">
               <div className="w-[50%] flex flex-col ">
                 <p className="font-gothicbold whitespace-nowrap">
-                  United Kingdom
+                Pune
                 </p>
-                <div className="flex flex-row w-[80%] py-1">
+                <div className="flex flex-row  py-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="1.2em"
@@ -53,9 +44,19 @@ const Contact = () => {
                       <circle cx="6.5" cy="6.5" r="2.5" />
                     </g>
                   </svg>
-                  <p className="text-xs">
-                    30 Eastbourne terrace Paddington, London W2 6LA UK
+                  <div className="flex flex-col">
+                  <p className="text-base">
+                  Yuga sport and Entertainment
                   </p>
+                  <p className="text-base">
+                  Plot No -2 Soham bungalow,
+                  </p>
+                  <p className="text-base">
+                  Pramathesh soc Kothrud
+                  </p><p className="text-base">
+                  Pune -411038
+                  </p>
+                  </div>
                 </div>
                 <div className="flex flex-row w-[80%] py-1">
                   <svg
@@ -69,12 +70,14 @@ const Contact = () => {
                       d="m221.59 160.3l-47.24-21.17a14 14 0 0 0-13.28 1.22a5 5 0 0 0-.56.42l-24.69 21a1.88 1.88 0 0 1-1.68.06c-15.87-7.66-32.31-24-40-39.65a1.91 1.91 0 0 1 0-1.68l21.07-25a6 6 0 0 0 .42-.58a14 14 0 0 0 1.12-13.27L95.73 34.49a14 14 0 0 0-14.56-8.38A54.24 54.24 0 0 0 34 80c0 78.3 63.7 142 142 142a54.25 54.25 0 0 0 53.89-47.17a14 14 0 0 0-8.3-14.53M176 210c-71.68 0-130-58.32-130-130a42.23 42.23 0 0 1 36.67-42h.23a2 2 0 0 1 1.84 1.31l21.1 47.11a2 2 0 0 1 0 1.67l-21.11 25.06a5 5 0 0 0-.43.57a14 14 0 0 0-.91 13.73c8.87 18.16 27.17 36.32 45.53 45.19a14 14 0 0 0 13.77-1c.19-.13.38-.27.56-.42l24.68-21a1.92 1.92 0 0 1 1.6-.1l47.25 21.17a2 2 0 0 1 1.21 2A42.24 42.24 0 0 1 176 210"
                     />
                   </svg>
-                  <p className="text-xs">+44 133-4232-54</p>
+                  <p className="text-sm font-bold">+91 96072 96161</p>
                 </div>
               </div>
-              <div className="w-[50%] flex flex-col">
-                <p className="font-gothicbold">France</p>
-                <div className="flex flex-row w-[80%] py-1">
+              <div className="w-[50%] flex flex-col ">
+                <p className="font-gothicbold whitespace-nowrap">
+                Mumbai
+                </p>
+                <div className="flex flex-row  py-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="1.2em"
@@ -94,9 +97,23 @@ const Contact = () => {
                       <circle cx="6.5" cy="6.5" r="2.5" />
                     </g>
                   </svg>
-                  <p className="text-xs">
-                    30 Eastbourne terrace Paddington, London W2 6LA UK
+                  <div className="flex flex-col">
+                  <p className="text-base">
+                  Yugandhara Holdings pvt.ltd,
                   </p>
+                  <p className="text-base">
+                  1st floor, bungalow no.5,
+                  </p>
+                  <p className="text-base">
+                  Mhada Road, SVP Nagar, andheri west
+                  </p>
+                  <p className="text-base">
+                  Opp Axis Bank
+                  </p>
+                  <p className="text-base">
+                  Mumbai 400053
+                  </p>
+                  </div>
                 </div>
                 <div className="flex flex-row w-[80%] py-1">
                   <svg
@@ -110,7 +127,7 @@ const Contact = () => {
                       d="m221.59 160.3l-47.24-21.17a14 14 0 0 0-13.28 1.22a5 5 0 0 0-.56.42l-24.69 21a1.88 1.88 0 0 1-1.68.06c-15.87-7.66-32.31-24-40-39.65a1.91 1.91 0 0 1 0-1.68l21.07-25a6 6 0 0 0 .42-.58a14 14 0 0 0 1.12-13.27L95.73 34.49a14 14 0 0 0-14.56-8.38A54.24 54.24 0 0 0 34 80c0 78.3 63.7 142 142 142a54.25 54.25 0 0 0 53.89-47.17a14 14 0 0 0-8.3-14.53M176 210c-71.68 0-130-58.32-130-130a42.23 42.23 0 0 1 36.67-42h.23a2 2 0 0 1 1.84 1.31l21.1 47.11a2 2 0 0 1 0 1.67l-21.11 25.06a5 5 0 0 0-.43.57a14 14 0 0 0-.91 13.73c8.87 18.16 27.17 36.32 45.53 45.19a14 14 0 0 0 13.77-1c.19-.13.38-.27.56-.42l24.68-21a1.92 1.92 0 0 1 1.6-.1l47.25 21.17a2 2 0 0 1 1.21 2A42.24 42.24 0 0 1 176 210"
                     />
                   </svg>
-                  <p className="text-xs">+44 133-4232-54</p>
+                  <p className="text-sm font-bold">+91 96072 96262</p>
                 </div>
               </div>
             </div>
